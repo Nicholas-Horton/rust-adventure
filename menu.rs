@@ -34,6 +34,7 @@ fn read_menu_option() -> bool {
   let mut opt = String::new();
   let stdin = io::stdin();
   stdin.lock().read_line(&mut opt).unwrap();
+  opt.truncate(1);
 
   for i in 0..OPTIONS.len() {
     if opt == OPTIONS[i].clone().selector.to_string() {
